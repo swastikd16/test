@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator (1st Sem)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+        footer {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #777;
+            text-align: right;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CGPA Calculator (1st Sem)</h1>
+        
+        <label for="gradePoints">Total Grade Points:</label>
+        <input type="number" id="gradePoints" placeholder="Enter total grade points" required>
+        
+        <button onclick="calculateCGPA()">Calculate CGPA</button>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <footer>
+        Made by: Swastik Dan<br>
+        NIT Raipur, CSE (1st year)
+    </footer>
+
+    <script>
+        function calculateCGPA() {
+            var totalCredits = 24; // Fixed Total Credits
+            var gradePoints = document.getElementById('gradePoints').value;
+
+            if (gradePoints > 0) {
+                var cgpa = gradePoints / totalCredits;
+                document.getElementById('result').innerText = 'Your CGPA is: ' + cgpa.toFixed(2);
+            } else {
+                document.getElementById('result').innerText = 'Please enter a valid number of grade points.';
+            }
+        }
+    </script>
+</body>
+</html>
